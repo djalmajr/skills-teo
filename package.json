@@ -1,0 +1,10 @@
+{
+  "name": "@djalmajr/skills-teo",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check:skills": "node scripts/check-skills.mjs",
+    "test": "npm run check:skills"
+  }
+}

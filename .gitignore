@@ -1,0 +1,41 @@
+# Dependencies
+node_modules/
+
+# OS
+.DS_Store
+*.swp
+*~
+
+# Editor
+.vscode/
+.idea/
+
+# Skills installed locally via CLI
+.claude/
+.cursor/
+.codeium/
+.copilot/
+.codex/
+.roo/
+.gemini/
+.trae/
+.kiro/
+.continue/
+.agents/*
+!.agents/skills/
+.agents/skills/*
+.antigravitycli
+
+# Logs
+*.log
+npm-debug.log*
+
+# Lock files
+skills-lock.json
+.skill-lock.json
+
+# Temp / local working collections
+tmp/
+temp/
+raw/
+artigos/
