@@ -1,0 +1,7 @@
+[[cap-glossario]]
+== Palavras deste livro
+(((Glossário)))
+
+Termos que estas páginas não puderam evitar. Cada um aparece no texto com uma nota na primeira vez; aqui ficam juntos, para consultar.
+
+<termo>:: <uma linha, em português comum>

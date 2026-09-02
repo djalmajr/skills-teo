@@ -17,8 +17,10 @@ Detailed distribution and update notes live in [`docs/distribution.md`](docs/dis
 bunx skills add djalmajr/skills-teo --skill '*'
 
 # Specific skills
-bunx skills add djalmajr/skills-teo --skill sermao-emilio
+bunx skills add djalmajr/skills-teo --skill sermao
 bunx skills add djalmajr/skills-teo --skill transcricao
+bunx skills add djalmajr/skills-teo --skill debate
+bunx skills add djalmajr/skills-teo --skill livro
 
 # Explicit target agents
 bunx skills add djalmajr/skills-teo --agent claude-code --agent opencode --agent codex --skill '*'
@@ -31,6 +33,8 @@ This repo follows the shared Agent Skills convention:
 ```text
 skills/<skill-name>/SKILL.md          # project-authored, distributed skills
 skills/<skill-name>/scripts/          # optional helpers owned by the skill
+skills/<skill-name>/templates/        # optional output skeletons
+skills/<skill-name>/references/       # optional catalogs / lookup tables
 skills/<skill-name>/examples/         # optional calibration material
 skills/<skill-name>/transcriptions/   # optional long-form voice samples
 .agents/skills/<skill-name>/SKILL.md  # explicitly vendored third-party skills (if any)
@@ -51,20 +55,25 @@ These skills are written for the common `SKILL.md` format used by `skills.sh`, C
 
 Keep frontmatter portable. Avoid agent-specific fields unless the skill truly needs them and the behavior is documented in `SKILL.md`.
 
-## Skills (2)
+`sermao-emilio` was renamed to `sermao`. The Garófalo voice is `--estilo=emilio` (the default).
+
+## Skills (4)
 
 | Skill | Purpose |
 |-------|---------|
-| sermao-emilio | Cria sermões no padrão narrativo-pastoral (história do cotidiano, costuras no meio, 2–3 partes, graça no fecho) |
+| debate | Entrevista o tema, media três agentes, grava ata + síntese + veredito. **Não** escreve o livro. |
+| livro | Escreve um volume (ebook AsciiDoc) com pesquisa, fio, editores e curadoria. Insumo opcional: um debate, notas, artigo, ou tópico nu. |
+| sermao | Cria sermões pregáveis; o estilo é parâmetro (`emilio`, `expositivo`, ou ad hoc) |
 | transcricao | Pipeline YouTube → legendas → texto limpo → artigo em prosa; organiza `raw/` + `artigos/` |
 
 ## Flow
 
 ```text
-fonte (texto bíblico ou URL)
-  → skill de criação (sermao-emilio)
-    ou captura/edição (transcricao)
-  → artefato pregável / artigo
+texto bíblico / URL  →  sermao (pregável)  ou  transcricao (artigo)
+
+intake (tema, pergunta, tese)  →  debate  →  Debate - tema/ (indice + raw)
+                                                      ↓  opcional, outra pasta
+                                                   livro  →  Livro - tema/ (indice + livro/_index.adoc + raw)
 ```
 
 ## Template and asset convention
@@ -99,9 +108,12 @@ See the full publishing and update checklist in [`docs/distribution.md`](docs/di
 
 ## How to use
 
-Each skill is invoked with `/skill-name`:
+Each skill is invoked with `/teo-<name>`:
 
 ```text
-/sermao-emilio
-/transcricao
+/teo-sermao
+/teo-sermao --estilo=emilio
+/teo-transcricao
+/teo-debate
+/teo-livro
 ```

@@ -1,0 +1,36 @@
+= <Tema>: <Uma linha: o que este livro é>
+:doctype: book
+:lang: pt-BR
+:toc: auto
+:toc-title: Sumário
+:toclevels: 3
+:sectnums:
+:sectnumlevels: 3
+:chapter-signifier: Capítulo
+:xrefstyle: full
+:icons: font
+:experimental:
+:sectanchors:
+:sectlinks:
+:idprefix:
+:idseparator: -
+:nofooter:
+:media: prepress
+
+[abstract]
+--
+*Pergunta:* <fio ou pergunta>
+
+*Leitor / vozes:* <quem lê, ou as vozes se for quatro-pontos>
+--
+
+include::00-prefacio.adoc[]
+
+include::01-<slug>.adoc[]
+
+include::09-glossario.adoc[]
+
+[index]
+== Índice remissivo
+
+index::[]

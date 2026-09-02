@@ -7,7 +7,8 @@ description: >-
   organiza raw/ + artigos/. Use sempre que o usuário pedir transcrição de pregação,
   legenda de sermão, "passa esse YouTube pra texto", playlist de exposições, artigo a
   partir de vídeo teológico, limpar SRT/VTT, remover vícios de oralidade de legenda,
-  ou montar coleção de notas a partir de vídeos — mesmo sem dizer "transcrição".
+  ou montar coleção de notas a partir de vídeos — mesmo sem dizer
+  "transcrição". Também /teo-transcricao.
 ---
 
 # Transcrição → Artigo
@@ -29,6 +30,7 @@ Esta skill é **autossuficiente**: o fluxo e o script de limpeza estão aqui. N�
 ## Quando NÃO usar
 
 - Criar sermão ou texto novo do zero (sem base em áudio/vídeo)
+- Escrever um livro ou ebook (`livro`) — o artigo desta skill pode ser *insumo* de `/teo-livro`, não o volume
 - Exegese técnica desconectada de uma fonte falada
 - Download do vídeo em si (esta skill baixa **só legendas**, salvo pedido explícito em contrário)
 - Legenda palavra-por-palavra com timestamps para legendagem de vídeo
@@ -320,4 +322,4 @@ Atualize o `README.md` da coleção com fontes, lista de artigos (título, autor
 ## Escopo
 
 Esta skill cobre **captura + limpeza + edição editorial** de exposição existente.  
-Não substitui skill de **criação** de sermão/texto novo.
+Não substitui skill de **criação** de sermão (`sermao`), debate (`debate`) ou livro (`livro`).

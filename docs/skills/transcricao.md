@@ -4,6 +4,7 @@ Agent source of truth: [`skills/transcricao/SKILL.md`](../../skills/transcricao/
 
 ## When to use
 
+- `/teo-transcricao`
 - Transcrever sermão/exposição/aula do YouTube
 - Processar playlist ou lote de URLs
 - Limpar `.srt`/`.vtt` com eco de auto-legenda

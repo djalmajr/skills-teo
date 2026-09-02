@@ -1,18 +1,10 @@
----
-name: sermao-emilio
-description: >
-  Cria, reescreve ou estrutura sermões no padrão narrativo-pastoral de Emílio Garófalo Neto:
-  história do cotidiano no início, costuras história↔texto no meio, leitura solene, tese memorável
-  cedo, desenvolvimento em 2–3 partes, exemplos do dia a dia, humor leve e fechamento de
-  graça/esperança. Use sempre que o usuário pedir para preparar sermão, esboço de pregação, homilia,
-  mensagem dominical, devocional longo, "sermão no estilo Emílio/Garófalo", "pregação com história",
-  "mensagem pastoral narrativa", ou quiser transformar um texto bíblico em sermão acessível, afetivo
-  e confessional — mesmo sem citar o nome do pregador.
----
+# Estilo: emilio
 
-# Sermão Emílio
+**id:** `emilio`  
+**aliases:** emílio, garofalo, garófalo, narrativo, narrativo-pastoral, história-porta  
+**Uma linha:** pastor-contador de histórias confessional — cena do cotidiano abre, volta no meio, graça no fecho.
 
-Crie sermões no estilo de Emílio Garófalo Neto: **pastor-contador de histórias confessional**. Entre pela vida real do ouvinte, governe tudo pela Escritura, e feche com graça que reorienta o coração.
+Crie sermões no estilo de Emílio Garófalo Neto. Entre pela vida real do ouvinte, governe tudo pela Escritura, e feche com graça que reorienta o coração. Não imite biografia nem copie sermões existentes. Reproduza o **padrão estrutural e pastoral**.
 
 ## DNA do estilo
 
@@ -32,54 +24,35 @@ O gancho principal deste estilo é prender a atenção assim: começar com uma c
 
 ## Exemplos de referência
 
-Antes de escrever (ou quando travar na história-porta / costuras), leia as fichas em `examples/`:
+Antes de escrever (ou quando travar na história-porta / costuras), leia as fichas em `estilos/emilio/examples/`:
 
-- `examples/00-indice.md` — mapa rápido dos vídeos e quando usar cada ficha
-- `examples/01-numeros-33-34-jornada.md` — lista/jornada (https://youtu.be/1pDkQPmK46I)
-- `examples/02-2corintios-7-lutas-temores.md` — correção + consolo (https://youtu.be/Per8U5J_86k)
-- `examples/03-1samuel-4-quando-sangramos.md` — juízo / domesticar o sagrado (https://youtu.be/yQqlpCbGgYg)
-- `examples/04-genesis-48-ultimo-dia.md` — fim da vida / identidade (https://youtu.be/AW6syAmYD6g)
+- `estilos/emilio/examples/00-indice.md` — mapa rápido dos vídeos e quando usar cada ficha
+- `estilos/emilio/examples/01-numeros-33-34-jornada.md` — lista/jornada (https://youtu.be/1pDkQPmK46I)
+- `estilos/emilio/examples/02-2corintios-7-lutas-temores.md` — correção + consolo (https://youtu.be/Per8U5J_86k)
+- `estilos/emilio/examples/03-1samuel-4-quando-sangramos.md` — juízo / domesticar o sagrado (https://youtu.be/yQqlpCbGgYg)
+- `estilos/emilio/examples/04-genesis-48-ultimo-dia.md` — fim da vida / identidade (https://youtu.be/AW6syAmYD6g)
 
 Use os exemplos como **calibração de estrutura**, não como banco de ilustrações para repetir. Escolha 1 ficha cuja tensão se pareça com o texto pedido e extraia o padrão (porta → virada → tese → costuras → graça).
 
 ## Transcrições formatadas
 
-Para calibrar **voz longa, ritmo, humor e densidade de cotidiano**, leia trechos em `transcriptions/` (prosa editorial dos **mesmos quatro vídeos-base**, sem timestamps):
+Para calibrar **voz longa, ritmo, humor e densidade de cotidiano**, leia trechos em `estilos/emilio/transcriptions/` (prosa editorial dos **mesmos quatro vídeos-base**, sem timestamps):
 
-- `transcriptions/00-indice.md` — mapa
-- `transcriptions/01-numeros-33-34-jornada.md` — https://youtu.be/1pDkQPmK46I
-- `transcriptions/02-2corintios-7-lutas-temores.md` — https://youtu.be/Per8U5J_86k
-- `transcriptions/03-1samuel-4-quando-sangramos.md` — https://youtu.be/yQqlpCbGgYg
-- `transcriptions/04-genesis-48-ultimo-dia.md` — https://youtu.be/AW6syAmYD6g
+- `estilos/emilio/transcriptions/00-indice.md` — mapa
+- `estilos/emilio/transcriptions/01-numeros-33-34-jornada.md` — https://youtu.be/1pDkQPmK46I
+- `estilos/emilio/transcriptions/02-2corintios-7-lutas-temores.md` — https://youtu.be/Per8U5J_86k
+- `estilos/emilio/transcriptions/03-1samuel-4-quando-sangramos.md` — https://youtu.be/yQqlpCbGgYg
+- `estilos/emilio/transcriptions/04-genesis-48-ultimo-dia.md` — https://youtu.be/AW6syAmYD6g
 
 Como usar:
 
-1. `examples/` → ossatura (porta, costuras, partes)
-2. `transcriptions/` → ouvido da voz (1 seção ou 2–3 páginas bastam; preferir o arquivo cujo tema se aproxima do seu texto)
+1. `estilos/emilio/examples/` → ossatura (porta, costuras, partes)
+2. `estilos/emilio/transcriptions/` → ouvido da voz (1 seção ou 2–3 páginas bastam; preferir o arquivo cujo tema se aproxima do seu texto)
 3. sermão novo → conteúdo original para o texto pedido
 
 Não cole blocos longos das transcrições no sermão final. Extraia o *modo* de contar, não o texto pronto.
 
-## Idioma
-
-Escreva no idioma do usuário. Se o usuário escrever em português, o sermão sai em português brasileiro oral, natural e cultual — não em jargão de seminário.
-
-## Quando usar
-
-- Preparar sermão / esboço / manuscrito de pregação
-- Reescrever mensagem fria em tom pastoral-narrativo
-- Criar abertura com história do cotidiano
-- Estruturar texto bíblico em 2–3 movimentos com conexões claras no meio
-- Tornar exposição bíblica mais viva, próxima e fácil de acompanhar
-
-## Quando NÃO usar
-
-- Estudo exegético técnico sem intenção de pregação
-- Artigo teológico acadêmico
-- Roteiro de podcast secular
-- Devocional de 1 parágrafo (use formato curto só se o usuário pedir explicitamente)
-
-## Princípios inegociáveis
+## Princípios inegociáveis deste estilo
 
 1. **A história do cotidiano abre; o texto governa.** A cena inicial ilumina o texto — nunca o substitui.
 2. **Conecte os pontos no meio.** A cada movimento do texto, mostre o eco na história inicial ou num exemplo do dia a dia. É isso que prende a atenção.
@@ -91,29 +64,7 @@ Escreva no idioma do usuário. Se o usuário escrever em português, o sermão s
 8. **Fale com a igreja, não acima dela.** Tom de conversa pastoral, presença, perguntas, identificação.
 9. **Doutrina dentro da narrativa.** Evite blocos doutrinários abstratos desconectados da história do texto.
 
-## Entrada mínima
-
-Antes de escrever, obtenha ou infira:
-
-| Campo | Obrigatório? | Exemplos |
-|---|---|---|
-| Texto bíblico | sim | 1Sm 4; 2Co 7.2–16; Gn 48 |
-| Ocasião | recomendado | culto dominical, conferência, santa ceia, funeral |
-| Público | recomendado | igreja local mista, jovens, famílias |
-| Ênfase desejada | opcional | consolo, correção, missão, identidade cristã |
-| Duração alvo | opcional | 25 / 35 / 45 min |
-| Formato de saída | opcional | esboço, manuscrito oral, ambos |
-| Restrições | opcional | evitar futebol, tom mais sóbrio, sem humor |
-
-Se faltar o texto bíblico, pergunte. Se o resto faltar, escolha defaults sensatos e declare-os no topo do artefato.
-
-### Defaults
-
-- Público: igreja local adulta / mista (sem recursos infantis obrigatórios)
-- Duração: 30–40 min
-- Formato: **manuscrito oral pregável** + esboço curto no topo
-- Tom: pastoral brasileiro, quente, claro, confessional
-- Preferência: **muitos exemplos do cotidiano** + **conexões explícitas história ↔ texto no meio**
+Defaults deste estilo: manuscrito oral; muitos exemplos do cotidiano; costuras história↔texto no meio. Sobrepõem restrições do usuário (ex.: sem humor).
 
 ## Fluxo de criação
 
@@ -191,7 +142,7 @@ História-porta: [cena]
   └─ eco na Parte 3 / fecho: [resolução da cena] ↔ [graça / resposta]
 ```
 
-Isso evita história “de enfeite” no início e silêncio depois. Se precisar de modelo real, abra a ficha correspondente em `examples/`.
+Isso evita história “de enfeite” no início e silêncio depois. Se precisar de modelo real, abra a ficha correspondente em `estilos/emilio/examples/`.
 
 ### 4. Escrever no tom oral pastoral
 
@@ -218,10 +169,10 @@ Evite:
 
 Depois do esboço e antes do manuscrito final:
 
-1. abra `examples/00-indice.md` e escolha a ficha de tensão mais próxima
+1. abra `estilos/emilio/examples/00-indice.md` e escolha a ficha de tensão mais próxima
 2. confira se o seu sermão tem a mesma densidade de **costura no meio** que a ficha modela
 3. se a sua história só aparece no começo, reescreva as partes
-4. abra 1 arquivo em `transcriptions/` e leia só o suficiente para calibrar tom (abertura + uma seção do meio)
+4. abra 1 arquivo em `estilos/emilio/transcriptions/` e leia só o suficiente para calibrar a voz (abertura + uma seção do meio)
 5. ajuste o manuscrito para soar oral-pastoral brasileiro, com exemplos ordinários claros
 
 ### 6. Revisar com o checklist do estilo
@@ -235,6 +186,7 @@ Sempre produza nesta ordem:
 ```markdown
 # [Título pregável]
 
+**Estilo:** emilio
 **Texto:** ...
 **Ocasião:** ...
 **Público:** ...
@@ -501,9 +453,3 @@ Antes de entregar, verifique:
 8. Humor de stand-up no meio do juízo bíblico
 9. Linguagem de livro didático (“outrossim”, “destarte”, “mister se faz”)
 10. Engajamento infantil ou “dinâmica de público” sem o usuário pedir
-
-## Resposta padrão ao usuário
-
-1. Se faltar info crítica (texto), pergunte
-2. Caso contrário, produza o artefato completo no formato obrigatório
-3. No final, ofereça em 1 linha variações possíveis (mais curto / mais expositivo / mais evangelístico), sem enrolar

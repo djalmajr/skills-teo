@@ -13,10 +13,19 @@ skills-teo/
 │   ├── distribution.md
 │   └── skills/
 └── skills/
-    ├── sermao-emilio/
+    ├── debate/
     │   ├── SKILL.md
     │   ├── examples/
-    │   └── transcriptions/
+    │   ├── references/
+    │   └── templates/
+    ├── livro/
+    │   ├── SKILL.md
+    │   ├── references/
+    │   └── templates/
+    ├── sermao/
+    │   ├── SKILL.md
+    │   ├── references/
+    │   └── estilos/
     └── transcricao/
         ├── SKILL.md
         └── scripts/
@@ -48,13 +57,14 @@ If a workflow needs a destination folder, take it from the user or use the curre
 
 ## Generated work products
 
-`transcricao` creates collection folders (`raw/`, `artigos/`). Those belong to the user's working directory, not to the skill package. Keep them out of this repository unless they are intentional public samples.
+`transcricao` creates collection folders (`raw/`, `artigos/`). `debate` creates `indice.md` + `raw/` (protocol, turns, synthesis, verdict). `livro` creates `indice.md` + `livro/` (AsciiDoc) + `raw/` (research, outline, editing) in a **separate** folder from any debate. Those belong to the user's working directory, not to the skill package. A debate folder is self-contained: it does not cite a pre-existing vault note as source, and it does not contain the book.
 
 ## Examples and transcriptions
 
 - `examples/` = short structural cards for calibration
 - `transcriptions/` = longer editorial prose for voice/rhythm calibration
 - Both are reference material, not content to paste wholesale into new sermons
+- In `sermao`, they live under the style that owns them (`estilos/emilio/examples/`, `estilos/emilio/transcriptions/`)
 
 ## Validation
 
