@@ -3,10 +3,10 @@
     {
       "source": "djalmajr/skills-teo",
       "skills": [
-        "debate",
-        "livro",
-        "sermao",
-        "transcricao"
+        "teo-debate",
+        "teo-livro",
+        "teo-sermao",
+        "teo-transcricao"
       ]
     }
   ]

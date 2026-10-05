@@ -2,113 +2,113 @@
 
 Skills teológicas e pastorais para agentes de IA.
 
-Repository: https://github.com/djalmajr/skills-teo
+Repositório: https://github.com/djalmajr/skills-teo
 
-## Installing
+## Instalação
 
-Use the `skills` CLI. `bunx` is preferred; `npx` also works.
+Use a CLI `skills`. `bunx` é preferível; `npx` também funciona.
 
-The `djalmajr/skills-teo` shorthand below is GitHub `owner/repo` syntax for the public repository: https://github.com/djalmajr/skills-teo
+A abreviação `djalmajr/skills-teo` abaixo usa a sintaxe `owner/repo` do GitHub para o repositório público: https://github.com/djalmajr/skills-teo
 
-Detailed distribution and update notes live in [`docs/distribution.md`](docs/distribution.md).
+As notas detalhadas de distribuição e atualização estão em [`docs/distribution.md`](docs/distribution.md).
 
 ```bash
-# All skills
+# Todas as skills
 bunx skills add djalmajr/skills-teo --skill '*'
 
-# Specific skills
-bunx skills add djalmajr/skills-teo --skill sermao
-bunx skills add djalmajr/skills-teo --skill transcricao
-bunx skills add djalmajr/skills-teo --skill debate
-bunx skills add djalmajr/skills-teo --skill livro
+# Skills específicas
+bunx skills add djalmajr/skills-teo --skill teo-sermao
+bunx skills add djalmajr/skills-teo --skill teo-transcricao
+bunx skills add djalmajr/skills-teo --skill teo-debate
+bunx skills add djalmajr/skills-teo --skill teo-livro
 
-# Explicit target agents
+# Agentes de destino explícitos
 bunx skills add djalmajr/skills-teo --agent claude-code --agent opencode --agent codex --skill '*'
 ```
 
-## Package layout
+## Estrutura do pacote
 
-This repo follows the shared Agent Skills convention:
+Este repositório segue a convenção compartilhada de Agent Skills:
 
 ```text
-skills/<skill-name>/SKILL.md          # project-authored, distributed skills
-skills/<skill-name>/scripts/          # optional helpers owned by the skill
-skills/<skill-name>/templates/        # optional output skeletons
-skills/<skill-name>/references/       # optional catalogs / lookup tables
-skills/<skill-name>/examples/         # optional calibration material
-skills/<skill-name>/transcriptions/   # optional long-form voice samples
-.agents/skills/<skill-name>/SKILL.md  # explicitly vendored third-party skills (if any)
+skills/<nome-da-skill>/SKILL.md          # skills autorais distribuídas
+skills/<nome-da-skill>/scripts/          # auxiliares opcionais da skill
+skills/<nome-da-skill>/templates/        # esqueletos opcionais de saída
+skills/<nome-da-skill>/references/       # catálogos e tabelas de consulta opcionais
+skills/<nome-da-skill>/examples/         # material opcional de calibração
+skills/<nome-da-skill>/transcriptions/   # amostras opcionais de voz em formato longo
+.agents/skills/<nome-da-skill>/SKILL.md  # skills de terceiros explicitamente vendorizadas, se houver
 ```
 
-`SKILL.md` is the source of truth for agent behavior, triggers, and execution procedure. The root README explains the package for humans; skill-specific human notes live under `docs/skills/`.
+`SKILL.md` é a fonte de verdade para o comportamento dos agentes, os gatilhos e o procedimento de execução. O README raiz explica o pacote para pessoas; as notas humanas específicas de cada skill ficam em `docs/skills/`.
 
-Third-party skills stay out of the project's canonical `skills/` namespace and out of `skills.json`. Only explicitly unignored paths under `.agents/skills/` would be versioned; other locally installed agent skills remain ignored.
+Skills de terceiros ficam fora do diretório canônico `skills/` do projeto e fora de `skills.json`. Somente caminhos explicitamente excluídos das regras de arquivos ignorados em `.agents/skills/` seriam versionados; as demais skills instaladas localmente continuam ignoradas.
 
-## Compatibility
+## Compatibilidade
 
-These skills are written for the common `SKILL.md` format used by `skills.sh`, Claude Code, OpenCode, and Codex.
+Estas skills usam o formato comum `SKILL.md`, adotado por `skills.sh`, Claude Code, OpenCode e Codex.
 
-- `skills.sh` discovers project-authored skills under `skills/` and installs them into selected agent paths.
-- Claude Code loads installed skills from `.claude/skills/<name>/SKILL.md` or `~/.claude/skills/<name>/SKILL.md`.
-- OpenCode loads skills from `.opencode/skills`, `.claude/skills`, or `.agents/skills` locations and requires `name` to match the directory name.
-- Codex reads the same `SKILL.md` metadata.
+- `skills.sh` descobre as skills autorais do projeto em `skills/` e as instala nos caminhos dos agentes selecionados.
+- Claude Code carrega skills instaladas de `.claude/skills/<name>/SKILL.md` ou `~/.claude/skills/<name>/SKILL.md`.
+- OpenCode carrega skills dos caminhos `.opencode/skills`, `.claude/skills` ou `.agents/skills` e exige que `name` corresponda ao nome do diretório.
+- Codex lê os mesmos metadados de `SKILL.md`.
 
-Keep frontmatter portable. Avoid agent-specific fields unless the skill truly needs them and the behavior is documented in `SKILL.md`.
+Mantenha o bloco de metadados portátil. Evite campos específicos de agentes, a menos que a skill realmente precise deles e o comportamento esteja documentado em `SKILL.md`.
 
-`sermao-emilio` was renamed to `sermao`. The Garófalo voice is `--estilo=emilio` (the default).
+`sermao-emilio` foi renomeada para `teo-sermao`. A voz de Garófalo é `--estilo=emilio` (o padrão).
 
 ## Skills (4)
 
-| Skill | Purpose |
+| Skill | Finalidade |
 |-------|---------|
-| debate | Entrevista o tema, media três agentes, grava ata + síntese + veredito. **Não** escreve o livro. |
-| livro | Escreve um volume (ebook AsciiDoc) com pesquisa, fio, editores e curadoria. Insumo opcional: um debate, notas, artigo, ou tópico nu. |
-| sermao | Cria sermões pregáveis; o estilo é parâmetro (`emilio`, `expositivo`, ou ad hoc) |
-| transcricao | Pipeline YouTube → legendas → texto limpo → artigo em prosa; organiza `raw/` + `artigos/` |
+| `teo-debate` | Entrevista o tema, media três agentes, grava ata + síntese + veredito. **Não** escreve o livro. |
+| `teo-livro` | Escreve um volume (livro digital em AsciiDoc) com pesquisa, fio, editores e curadoria. Insumo opcional: um debate, notas, artigo ou tópico nu. |
+| `teo-sermao` | Cria sermões pregáveis; o estilo é parâmetro (`emilio`, `expositivo` ou ad hoc). |
+| `teo-transcricao` | Fluxo YouTube → legendas → texto limpo → artigo em prosa; organiza `raw/` + `artigos/`. |
 
-## Flow
+## Fluxo
 
 ```text
-texto bíblico / URL  →  sermao (pregável)  ou  transcricao (artigo)
+texto bíblico / URL  →  teo-sermao (pregável)  ou  teo-transcricao (artigo)
 
-intake (tema, pergunta, tese)  →  debate  →  Debate - tema/ (indice + raw)
+entrevista inicial (tema, pergunta, tese)  →  teo-debate  →  Debate - tema/ (indice + raw)
                                                       ↓  opcional, outra pasta
-                                                   livro  →  Livro - tema/ (indice + livro/_index.adoc + raw)
+                                                   teo-livro  →  Livro - tema/ (indice + livro/_index.adoc + raw)
 ```
 
-## Template and asset convention
+## Convenção de modelos e recursos
 
-Each skill owns its own helpers under `skills/<skill-name>/` (`scripts/`, `examples/`, `transcriptions/`, `templates/` when needed). `SKILL.md` files should reference those paths relatively. Do not rely on global absolute paths or personal folders; skills must be self-contained when installed.
+Cada skill mantém seus próprios auxiliares em `skills/<nome-da-skill>/` (`scripts/`, `examples/`, `transcriptions/`, `templates/` quando necessário). Os arquivos `SKILL.md` devem referenciar esses caminhos de forma relativa. Não dependa de caminhos absolutos globais ou pastas pessoais; as skills precisam ser autossuficientes quando instaladas.
 
-External repo references should use full GitHub links in documentation when practical. Shorthands such as `djalmajr/skills-teo` are acceptable only where a CLI expects GitHub `owner/repo` syntax.
+Referências a repositórios externos devem usar links completos do GitHub na documentação quando for prático. Abreviações como `djalmajr/skills-teo` são aceitáveis somente onde uma CLI espera a sintaxe `owner/repo` do GitHub.
 
-## Skill evolution loop
+## Ciclo de evolução das skills
 
-Treat these skills as a living pastoral toolkit. Improvements should come from real usage evidence: weak openings, missing metadata, brittle cleanup scripts, or outputs that fail a quick preach/read test. Keep changes small and traceable, update the affected `SKILL.md` and local assets together, and validate against at least one realistic case before release.
+Trate estas skills como um kit pastoral vivo. As melhorias devem vir de evidências de uso real: aberturas fracas, metadados ausentes, scripts frágeis de limpeza ou saídas que falham em um teste rápido de pregação/leitura. Mantenha as mudanças pequenas e rastreáveis, atualize o `SKILL.md` afetado e os recursos locais em conjunto e valide pelo menos um caso realista antes da publicação.
 
-## Checklist before publishing
+## Lista de verificação antes da publicação
 
-Before publishing or asking users to update installed skills:
+Antes de publicar ou pedir que as pessoas atualizem skills instaladas:
 
-- Each skill directory under `skills/` has a `SKILL.md`.
-- Each `SKILL.md` starts with valid YAML frontmatter.
-- Frontmatter `name` matches the directory name.
-- Frontmatter `description` explains both what the skill does and when to use it.
-- `skills.json`, if kept, lists every skill directory and no missing/renamed skill.
-- Human docs under `docs/` link to `docs/skills/*.md`.
-- New templates or scripts live inside the owning skill directory.
-- Reusable skill content does not depend on local absolute paths, private repos, or machine-specific names.
-- Install smoke for the intended target agents is done with `bunx skills add ...` before release.
+- Cada diretório de skill em `skills/` tem um `SKILL.md`.
+- Cada `SKILL.md` começa com metadados YAML válidos.
+- O `name` do bloco de metadados corresponde ao nome do diretório.
+- A `description` do bloco de metadados explica o que a skill faz e quando usá-la.
+- `skills.json`, se mantido, lista cada diretório de skill e não omite skills nem mantém nomes antigos.
+- A documentação humana em `docs/` aponta para `docs/skills/*.md`.
+- Modelos ou scripts novos ficam dentro do diretório da skill proprietária.
+- O conteúdo reutilizável das skills não depende de caminhos absolutos locais, repositórios privados ou nomes específicos de máquinas.
+- Um teste de instalação para os agentes de destino é feito com `bunx skills add ...` antes da publicação.
 
-See the full publishing and update checklist in [`docs/distribution.md`](docs/distribution.md).
+Veja a lista de verificação completa de publicação e atualização em [`docs/distribution.md`](docs/distribution.md).
 
-## Documentation
+## Documentação
 
-[`docs/`](docs/) — human usage guides. Skill-specific notes live under [`docs/skills/`](docs/skills/).
+[`docs/`](docs/) — guias de uso para pessoas. As notas específicas de cada skill ficam em [`docs/skills/`](docs/skills/).
 
-## How to use
+## Como usar
 
-Each skill is invoked with `/teo-<name>`:
+Cada skill é invocada com `/teo-<nome>`:
 
 ```text
 /teo-sermao
