@@ -1,11 +1,11 @@
-# Documentation
+# Documentação
 
-Human-facing guides for `skills-teo`.
+Guias de uso para pessoas sobre `skills-teo`.
 
-| Doc | Purpose |
+| Doc | Finalidade |
 |-----|---------|
-| [conventions.md](conventions.md) | Package conventions for skill authors |
-| [distribution.md](distribution.md) | Install, publish, and update notes |
-| [skills/](skills/) | Per-skill human notes |
+| [conventions.md](conventions.md) | Convenções do pacote para autores de skills |
+| [distribution.md](distribution.md) | Notas de instalação, publicação e atualização |
+| [skills/](skills/) | Notas humanas de cada skill |
 
-Agent behavior lives in `skills/*/SKILL.md`. Keep this folder for humans and package maintainers.
+O comportamento dos agentes está em `skills/*/SKILL.md`. Mantenha esta pasta para pessoas e mantenedores do pacote.

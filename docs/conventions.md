@@ -1,6 +1,6 @@
-# Conventions
+# Convenções
 
-## Layout
+## Estrutura
 
 ```text
 skills-teo/
@@ -13,67 +13,72 @@ skills-teo/
 │   ├── distribution.md
 │   └── skills/
 └── skills/
-    ├── debate/
+    ├── teo-debate/
     │   ├── SKILL.md
     │   ├── examples/
     │   ├── references/
     │   └── templates/
-    ├── livro/
+    ├── teo-livro/
     │   ├── SKILL.md
     │   ├── references/
     │   └── templates/
-    ├── sermao/
+    ├── teo-sermao/
     │   ├── SKILL.md
     │   ├── references/
     │   └── estilos/
-    └── transcricao/
+    └── teo-transcricao/
         ├── SKILL.md
         └── scripts/
 ```
 
 ## SKILL.md
 
-- Start with YAML frontmatter containing at least `name` and `description`.
-- `name` must equal the directory name.
-- Write the procedure so an agent can run it without private context.
-- Prefer relative paths inside the skill directory.
-- Keep triggers in `description` (what + when).
+- Comece com metadados YAML contendo pelo menos `name` e `description`.
+- `name` deve ser igual ao nome do diretório e usar o prefixo `teo-`.
+- Escreva o procedimento para que um agente possa executá-lo sem contexto privado.
+- Prefira caminhos relativos dentro do diretório da skill.
+- Mantenha os gatilhos em `description` (o que faz + quando usar).
 
-## Language
+## Idioma
 
-- Skills may be authored in Portuguese when the domain is pastoral/theological for pt-BR users.
-- Keep install/distribution docs bilingual-friendly; English package framing is fine at the root, Portuguese skill bodies are expected for this repo.
+- Todo texto visível das skills e da documentação deve estar em português do Brasil (pt-BR). Inglês só pode permanecer em nomes próprios, comandos, campos YAML, caminhos e identificadores técnicos.
+- A documentação de instalação/distribuição e os corpos das skills deste repositório seguem o mesmo padrão pt-BR.
 
-## Self-containment
+## Formatação
 
-A skill must not require:
+- Mantenha cada parágrafo e item de lista em uma única linha, sem quebras manuais para limitar a largura.
+- Preserve quebras estruturais em blocos de código, tabelas, listas, metadados YAML e versos.
 
-- absolute paths like `/Users/...`
-- personal note vaults or OneDrive trees
-- secrets, tokens, or private API keys
-- undocumented local collections
+## Autossuficiência
 
-If a workflow needs a destination folder, take it from the user or use the current working directory.
+Uma skill não pode exigir:
 
-## Generated work products
+- caminhos absolutos como `/Users/...`
+- coleções pessoais de notas ou árvores do OneDrive
+- segredos, tokens ou chaves de API privadas
+- coleções locais não documentadas
 
-`transcricao` creates collection folders (`raw/`, `artigos/`). `debate` creates `indice.md` + `raw/` (protocol, turns, synthesis, verdict). `livro` creates `indice.md` + `livro/` (AsciiDoc) + `raw/` (research, outline, editing) in a **separate** folder from any debate. Those belong to the user's working directory, not to the skill package. A debate folder is self-contained: it does not cite a pre-existing vault note as source, and it does not contain the book.
+Se um fluxo precisar de uma pasta de destino, use a pasta informada pela pessoa usuária ou o diretório de trabalho atual.
 
-## Examples and transcriptions
+## Produtos de trabalho gerados
 
-- `examples/` = short structural cards for calibration
-- `transcriptions/` = longer editorial prose for voice/rhythm calibration
-- Both are reference material, not content to paste wholesale into new sermons
-- In `sermao`, they live under the style that owns them (`estilos/emilio/examples/`, `estilos/emilio/transcriptions/`)
+`teo-transcricao` cria pastas de coleção (`raw/`, `artigos/`). `teo-debate` cria `indice.md` + `raw/` (protocolo, turnos, síntese, veredito). `teo-livro` cria `indice.md` + `livro/` (AsciiDoc) + `raw/` (pesquisa, plano de capítulos, edição) em uma pasta **separada** de qualquer debate. Esses itens pertencem ao diretório de trabalho da pessoa usuária, não ao pacote da skill. Uma pasta de debate é autossuficiente: não cita uma nota preexistente de uma coleção pessoal como fonte e não contém o livro.
 
-## Validation
+## Exemplos e transcrições
+
+- `examples/` = cartões estruturais curtos para calibração
+- `transcriptions/` = prosa editorial mais longa para calibração de voz/ritmo
+- Ambos são materiais de referência, não conteúdo para colar integralmente em sermões novos
+- Em `teo-sermao`, ficam sob o estilo que os utiliza (`estilos/emilio/examples/`, `estilos/emilio/transcriptions/`)
+
+## Verificação
 
 ```bash
 npm test
 ```
 
-The check confirms:
+O comando confirma:
 
-1. every `skills/*` directory has `SKILL.md`
-2. frontmatter `name` matches the directory
-3. `skills.json` lists exactly those skills
+1. cada diretório `skills/*` tem `SKILL.md`
+2. o `name` do bloco de metadados corresponde ao diretório
+3. `skills.json` lista exatamente essas skills
